@@ -1,0 +1,39 @@
+-> here i will write the instruction from course 
+----------------------------------------------------------------
+1- history stack -> is js stack that rigister all steps in the website.
+----------------------------------------------------------------
+2- createBrowserRouter -> use for create routes map to use it in the application
+----------------------------------------------------------------
+3- routerProvider -> use for identify routes to application 
+----------------------------------------------------------------
+4- Nested Routes -> we use the nested routes to aviod repeat layouts like footer or header 
+----------------------------------------------------------------
+5- steps ->
+
+0- first path -> (/) reprsent the layout for the application.
+1- app js add the layout like header, main content, footer.
+2- index js add routes map and router links
+3- in app js or Root in main content use Outlet from the react-router-dom to run the component content
+----------------------------------------------------------------
+6- errorElement -> that claa element when the page is not from list from routes (page not found)
+----------------------------------------------------------------
+7- Multibe layout -> in here we need to create new opject for new path and make the root lay aout and his children who follw the same layout
+----------------------------------------------------------------
+8- we can use to="userprofile" without using / in
+react router dom he know if this is subdomian from the main domain
+----------------------------------------------------------------
+9- use end after to in Link or NaveLink to make this link uniqu like use exact
+----------------------------------------------------------------
+10- useParams -> it's use to get url params and we send it like that /user/:id
+----------------------------------------------------------------
+11- useNavigate -> it's use to navigate to spesific route 
+----------------------------------------------------------------
+12- useNavigate, useParams -> must identfiy firstly before use it
+----------------------------------------------------------------
+13- we can use navigate(-1) to navigate to previos route
+----------------------------------------------------------------
+14- navigate("/", {replace: true}) -> we use that to replace and no return to previos route
+remove the previos route from history stack
+----------------------------------------------------------------
+
+
