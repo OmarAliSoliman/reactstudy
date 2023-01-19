@@ -8,7 +8,7 @@ import About from "./routes/About";
 import "./css/style.css";
 
 // 1-> imoprt createBrowserRouter and RouterProvider from react-router-dom to hanlde routers
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, useLoaderData } from "react-router-dom";
 import ErrorPage from "./routes/ErrorPage";
 import User from "./routes/user/User";
 import UserProfile from "./routes/user/UserProfile";
@@ -21,6 +21,7 @@ const routes = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
+    loader: loader,
     children: [
       { index: true, element: <Home /> },
       { path: "about", element: <About /> },

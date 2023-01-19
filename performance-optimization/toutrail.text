@@ -1,0 +1,47 @@
+in this playlist 
+we discus some of persformances optimizations .
+
+----------------------------------------------------------------
+The proplem is the react is re-run(re-Evaluation) after clicking or update state...stc, and all thet before telling 
+the react dom for showing result, so when react is ging into view text and run the sow forloop and run it she
+ tell react dom to update state but after the forllop is done.
+
+this proplem -> happen when re-run(re-Evaluation) for the code.
+solution -> tell the component is not re-run untill change happen on your props or your state...
+----------------------------------------------------------------
+0- re-render -> happen when state change or props;
+----------------------------------------------------------------
+1 - Re-Evaluation(re-run) -> name for process that make after update state or somthing like that after clicking .. (re-run evry thing expect the state)
+but hrere -> re-run is must work but re-render is working or not working based on changes of state
+----------------------------------------------------------------
+2- React -> is reading the all functionality of code and the hooks and everything
+----------------------------------------------------------------
+3- ReactDom -> represents the result after procceing from react code 
+----------------------------------------------------------------
+4- for solve the reavalutate proplem we need to use React.memo(componentname) for cash the target component and 
+cheack if there anything update on it or not and if there thing update run this component if not don't run it.
+
+but if we convert the state or the text to be an array or object (referance type ) the proplem is working agin
+cause react when cheacking the value of referance she found there are 2 diffrent referance.
+
+(if send object)
+
+useMemo use for 3 thing (object, array, function(return value))
+----------------------------------------------------------------
+5- solution for that problem is to use (useMemo) for this object not for the component
+
+  const name = useMemo(()=>{
+    return {name: 'omar'}
+  }, []) ................ with no depances
+----------------------------------------------------------------
+6- but if we use function that not return anything => we can memoz it by using callback
+  const handelage = useCallback(() => {
+    console.log("age");
+  }, []);
+
+----------------------------------------------------------------
+7- the diffrent between the (useMemeo and useCallback)
+useMemeo => that just cashing what is return on it
+useCallback => that cashing all logic on it 
+----------------------------------------------------------------
+
