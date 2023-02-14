@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="counter">
+      <h5>Counter: <span id="counter">0</span></h5>
+      <button class="increase">Increase</button>
+      <button class="decrease">Decrease</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.min.js"></script>
+    <script>
+      //init the state
+      const initState = { counter: 2 };
+
+      // init the reduces
+      const counterReducer = (state = initState, action) => {
+        //login
+        if (action.type === "increase") {
+          return { ...state, counter: state.counter + 1 };
+        }
+        if (action.type === "decrease") {
+          return {...state, counter: state.counter - 1 };
+        }
+
+        return state;
+      };
+
+      // link store to reducer
+      const store = Redux.createStore(counterReducer);
+
+
+      // create component
+      const counterApp = () => {
+        document.querySelector("#counter").innerText = store.getState().counter;
+      };
+
+      counterApp();
+
+      // link component with store
+      store.subscribe(counterApp);
+
+      // make action
+      document
+        .querySelector(".increase")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const action = { type: "increase" };
+          store.dispatch(action);
+        });
+
+        document.querySelector('.decrease').addEventListener('click', function(e){
+          e.preventDefault();
+          const action = {type: 'decrease'};
+          store.dispatch(action);
+        })
+    </script>
+  </body>
+</html>
