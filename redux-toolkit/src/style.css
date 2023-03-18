@@ -1,0 +1,20 @@
+.counter_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.counter_content h5 {
+  font-size: 17px;
+}
+.counter_content button {
+  padding: 15px;
+  margin: 5px;
+  border: 0;
+  background-color: #DDD;
+  cursor: pointer;
+  border: 1px solid #DDD;
+}
+.counter_content button:hover {
+  background-color: #fff;
+}/*# sourceMappingURL=style.css.map */
